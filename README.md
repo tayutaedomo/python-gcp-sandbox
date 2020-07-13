@@ -11,3 +11,9 @@ $ pip install --upgrade pip
 $ pip install -r requirements.txt
 ```
 
+## Scripts
+### scripts/youtube/search.py
+```
+$ export GCP_YOUTUBE_DEVELOPER_KEY=<Your developer key>
+```
+

@@ -12,6 +12,7 @@
 #       to find the correct place to provide that key..
 
 import argparse
+import os
 
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
@@ -24,6 +25,10 @@ from googleapiclient.errors import HttpError
 DEVELOPER_KEY = 'REPLACE_ME'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
+
+if os.getenv('GCP_YOUTUBE_DEVELOPER_KEY'):
+  DEVELOPER_KEY = os.getenv('GCP_YOUTUBE_DEVELOPER_KEY')
+
 
 def youtube_search(options):
   youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
